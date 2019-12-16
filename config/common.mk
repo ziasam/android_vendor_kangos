@@ -56,6 +56,10 @@ $(foreach f,$(wildcard vendor/kangos/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/kangos/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
 
+# Enforce privapp-permissions whitelist
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
