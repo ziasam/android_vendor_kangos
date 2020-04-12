@@ -86,5 +86,5 @@ PRODUCT_COPY_FILES += \
     vendor/kangos/config/sysconfig/kangos-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/kangos-hiddenapi-package-whitelist.xml
 
 # Fonts
-include vendor/themes/fonts.mk
+include vendor/kangos/fonts.mk
 
