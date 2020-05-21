@@ -61,7 +61,8 @@ endif
 
 # Flipendo
 PRODUCT_COPY_FILES += \
-    vendor/kangos/config/permissions/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml
+    vendor/kangos/config/permissions/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml \
+    vendor/kangos/config/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # KangOS-specific
 PRODUCT_COPY_FILES += \
