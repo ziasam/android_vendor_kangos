@@ -122,3 +122,4 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
+-include packages/apps/Plugins/plugins.mk
