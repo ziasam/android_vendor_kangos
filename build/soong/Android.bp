@@ -79,6 +79,23 @@ target_process_sdk_version_overrides {
 }
 
 soong_config_module_type {
+    name: "target_camera_needs_client_info",
+    module_type: "cc_defaults",
+    config_namespace: "kangosGlobalVars",
+    value_variables: ["target_camera_needs_client_info"],
+    properties: ["cppflags"],
+}
+
+target_camera_needs_client_info {
+    name: "camera_needs_client_info",
+    soong_config_variables: {
+        target_camera_needs_client_info: {
+            cppflags: ["-DTARGET_NEEDS_CLIENT_INFO=\"%s\""],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "target_shim_libs",
     module_type: "cc_defaults",
     config_namespace: "kangosGlobalVars",
