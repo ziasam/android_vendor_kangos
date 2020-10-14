@@ -1,13 +1,5 @@
 // KangOS soong configs
 bootstrap_go_package {
-    name: "soong-kangos",
-    pkgPath: "kangos/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-kangos-generator",
     pkgPath: "kangos/soong/generator",
     deps: [
