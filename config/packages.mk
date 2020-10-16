@@ -1,4 +1,4 @@
-# Copyright (C) 2019 RevengeOS
+# Copyright (C) 2019 KangOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,16 +24,15 @@ PRODUCT_PACKAGES += \
     Stk \
     Snap
 
-# RevengeOS packages
+# KangOS packages
 PRODUCT_PACKAGES += \
     RetroMusicPlayer \
-    RevengeOSCalculator \
     OmniJaws \
     WeatherIcons \
     ViaBrowser
 
 # Updates
-ifeq ($(REVENGEOS_BUILDTYPE),OFFICIAL)
+ifeq ($(KANGOS_BUILDTYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
    Updates
 endif

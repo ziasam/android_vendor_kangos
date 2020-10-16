@@ -15,19 +15,19 @@ if not donate_url:
 	donate_url = "https://paypal.me/lucchetto"
 
 if not news_url:
-	news_url = "https://t.me/RevengeOSNews"
+	news_url = "https://t.me/KangOSNews"
 
 # Data to be written
 dictionary ={
 	"error": False,
 	"donate_url": donate_url,
-	"website_url": "https://revengeos.com/",
+	"website_url": "https://kangos.com/",
 	"news_url": news_url,
 	"datetime": time.time(),
 	"filename": zipvar,
 	"id": "",
 	"size": size,
-	"url": "https://osdn.net/frs/redir.php?f=%2Fstorage%2Fg%2Fr%2Fre%2Frevengeos%2F" + device + "%2F" + zipvar,
+	"url": "https://osdn.net/frs/redir.php?f=%2Fstorage%2Fg%2Fr%2Fre%2Fkangos%2F" + device + "%2F" + zipvar,
 	"version": version,
 	"filehash": md5
 }

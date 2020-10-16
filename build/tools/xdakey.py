@@ -1,6 +1,6 @@
 #
 # Copyright © 2019 Maestro Creativescape
-# Copyright © 2020 RevengeOS
+# Copyright © 2020 KangOS
 # SPDX-License-Identifier: GPL-3.0
 #
 

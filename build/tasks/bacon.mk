@@ -15,17 +15,17 @@
 
 # -----------------------------------------------------------------
 
-# RevengeOS package
-REVENGEOS_TARGET_PACKAGE := $(PRODUCT_OUT)/RevengeOS-$(REVENGEOS_BUILD_ID).zip
+# KangOS package
+KANGOS_TARGET_PACKAGE := $(PRODUCT_OUT)/KangOS-$(KANGOS_BUILD_ID).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(REVENGEOS_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(REVENGEOS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(REVENGEOS_TARGET_PACKAGE).md5sum
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(KANGOS_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(KANGOS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(KANGOS_TARGET_PACKAGE).md5sum
 	@echo "done"
 	@echo "===============================-Package complete-============================================================="
-	@echo "Zip: $(REVENGEOS_TARGET_PACKAGE)"
-	@echo "MD5: `cat $(REVENGEOS_TARGET_PACKAGE).md5sum | awk '{print $$1}' `"
-	@echo "Size: `du -sh $(REVENGEOS_TARGET_PACKAGE) | awk '{print $$1}' `"
+	@echo "Zip: $(KANGOS_TARGET_PACKAGE)"
+	@echo "MD5: `cat $(KANGOS_TARGET_PACKAGE).md5sum | awk '{print $$1}' `"
+	@echo "Size: `du -sh $(KANGOS_TARGET_PACKAGE) | awk '{print $$1}' `"
 @echo "=============================================================================================================="

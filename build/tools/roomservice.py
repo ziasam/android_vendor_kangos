@@ -45,10 +45,10 @@ default_manifest = ".repo/manifest.xml"
 custom_local_manifest = ".repo/local_manifests/roomservice.xml"
 custom_default_revision = "r10.0"
 custom_dependencies = "revenge.dependencies"
-org_manifest = "RevengeOS-Devices"  # leave empty if org is provided in manifest
-org_display = "RevengeOS-Devices"  # needed for displaying
+org_manifest = "KangOS-Devices"  # leave empty if org is provided in manifest
+org_display = "KangOS-Devices"  # needed for displaying
 
-manifest = ".repo/manifests/revengeos.xml"
+manifest = ".repo/manifests/kangos.xml"
 hals_manifest = ".repo/manifests/hals.xml"
 
 github_auth = None

@@ -1,7 +1,7 @@
-# RevengeOS functions that extend build/envsetup.sh
-function __print_revengeos_functions_help() {
+# KangOS functions that extend build/envsetup.sh
+function __print_kangos_functions_help() {
 cat <<EOF
-Additional RevengeOS functions:
+Additional KangOS functions:
 - cout:            Changes directory to out.
 - lineagegerrit:   A Git wrapper that fetches/pushes patch from/to LineageOS Gerrit Review.
 - lineagerebase:   Rebase a Gerrit change and push it again.
@@ -62,10 +62,10 @@ function breakfast()
 {
     target=$1
     local variant=$2
-    REVENGEOS_DEVICES_ONLY="true"
+    KANGOS_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/revengeos/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/kangos/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -81,12 +81,12 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the RevengeOS model name
+            # This is probably just the KangOS model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
 
-            lunch revengeos_$target-$variant
+            lunch kangos_$target-$variant
         fi
     fi
     return $?
@@ -690,7 +690,7 @@ function _adb_connected {
 
 function repopick() {
     T=$(gettop)
-    $T/vendor/revengeos/build/tools/repopick.py $@
+    $T/vendor/kangos/build/tools/repopick.py $@
 }
 
 # check and set ccache path on envsetup
@@ -732,17 +732,17 @@ function push_update(){(
 
     echo "Uploading build to ODSN"
 
-    scp $out_dir/$zipvar ${uservar}@storage.osdn.net:/storage/groups/r/re/revengeos/$target_device
+    scp $out_dir/$zipvar ${uservar}@storage.osdn.net:/storage/groups/r/re/kangos/$target_device
 
     echo "Generating json"
 
-    python3 $(pwd)/vendor/revengeos/build/tools/generatejson.py $target_device $zipvar $version $size $md5
+    python3 $(pwd)/vendor/kangos/build/tools/generatejson.py $target_device $zipvar $version $size $md5
 
     if [ -d "$devices_dir" ]; then
         rm -rf $devices_dir
     fi
 
-    git clone https://github.com/RevengeOS-Devices/official_devices.git $devices_dir
+    git clone https://github.com/KangOS-Devices/official_devices.git $devices_dir
 
     if [ -d "$devices_dir/$target_device" ]; then
         mv $(pwd)/device.json $devices_dir/$target_device
@@ -757,7 +757,7 @@ function push_update(){(
 
     cd $devices_dir
     git add $target_device && git commit -m "Update $target_device"
-    git push https://github.com/RevengeOS-Devices/official_devices.git HEAD:r10.0
+    git push https://github.com/KangOS-Devices/official_devices.git HEAD:r10.0
     rm -rf $devices_dir
 )}
 
@@ -776,7 +776,7 @@ function xda_push(){(
     read -p 'XDA_USERNAME: ' xdauser
     read -p 'XDA_PASSWORD: ' xdapass
     echo "For XDA_THREAD_ID goto your thread link and grab the integers after t"
-    echo "For eg: https://forum.xda-developers.com/lenovo-z6-pro/development/android-10-revengeos-3-1-lenovo-z6-pro-t4030703 Thread ID:4030703"
+    echo "For eg: https://forum.xda-developers.com/lenovo-z6-pro/development/android-10-kangos-3-1-lenovo-z6-pro-t4030703 Thread ID:4030703"
     read -p 'XDA_THREAD_ID: ' xdaid
   fi
 
@@ -785,8 +785,8 @@ function xda_push(){(
     export XDA_THREAD_ID=$xdaid
     export FILE=$(pwd)/changelog.txt
 
-    python3 $(pwd)/vendor/revengeos/build/tools/xdakey.py
-    python3 $(pwd)/vendor/revengeos/build/tools/xdapost.py
+    python3 $(pwd)/vendor/kangos/build/tools/xdakey.py
+    python3 $(pwd)/vendor/kangos/build/tools/xdapost.py
 )}
 
 # Allow GCC 4.9

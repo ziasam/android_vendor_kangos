@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #
 # Copyright © 2019 Maestro Creativescape
-# Copyright © 2020 RevengeOS
+# Copyright © 2020 KangOS
 # SPDX-License-Identifier: GPL-3.0
 #
 
@@ -22,7 +22,7 @@ try:
     XDA_POST_ID=r.json()["results"][0]["postid"]
     with open(filename) as file:
         cl=file.read()
-        cl+="\n\nDownload: https://revengeos.com/"
+        cl+="\n\nDownload: https://kangos.com/"
         data={"postid":XDA_POST_ID,"message":cl}
         headers = {'Content-type': 'application/json', 'Authorization': 'Bearer '+XDA_API_KEY}
     r = requests.post('https://api.xda-developers.com/v3/posts/new', data=json.dumps(data), headers=headers)

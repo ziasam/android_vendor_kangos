@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 RevengeOS
+# Copyright (C) 2018 KangOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 # limitations under the License
 
 # QCOM HW crypto
-include vendor/revengeos/config/BoardConfigKernel.mk
+include vendor/kangos/config/BoardConfigKernel.mk
 
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
 endif
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/revengeos/config/BoardConfigQcom.mk
+include vendor/kangos/config/BoardConfigQcom.mk
 endif
 
-include vendor/revengeos/config/BoardConfigSoong.mk
+include vendor/kangos/config/BoardConfigSoong.mk
