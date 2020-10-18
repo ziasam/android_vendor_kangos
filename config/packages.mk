@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
     RetroMusicPlayer \
     OmniJaws \
     WeatherIcons \
-    ViaBrowser
+    ViaBrowser \
+    DU-Themes
 
 # Updates
 ifeq ($(KANGOS_BUILDTYPE),OFFICIAL)
