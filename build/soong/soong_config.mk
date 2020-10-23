@@ -29,6 +29,7 @@ $(call add_json_bool, Uses_qcom_um_4_14_family, $(filter true,$(TARGET_USES_QCOM
 $(call add_json_bool, Needs_camera_boottime_timestamp, $(filter true,$(TARGET_CAMERA_BOOTTIME_TIMESTAMP)))
 $(call add_json_str_omitempty, Target_init_vendor_lib, $(TARGET_INIT_VENDOR_LIB))
 $(call add_json_str_omitempty, Qcom_um_soong_namespace, $(if $(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),$(QCOM_SOONG_NAMESPACE),))
+$(call add_json_bool, Target_uses_prebuilt_dynamic_partitions,   $(filter true,$(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)))
 
 # This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
 _json_contents := $(_json_contents)__SV_END

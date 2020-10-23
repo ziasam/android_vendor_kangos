@@ -44,6 +44,9 @@ type Product_variables struct {
 		Cflags []string
 		Whole_static_libs []string
 	}
+        Target_uses_prebuilt_dynamic_partitions struct {
+		Cflags []string
+	}
 	Uses_generic_camera_parameter_library struct {
 		Srcs []string
 	}
@@ -96,6 +99,7 @@ type ProductVariables struct {
 	Apply_msm8974_1440p_egl_workaround  *bool `json:",omitempty"`
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
+	Target_uses_prebuilt_dynamic_partitions  *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Qcom_um_soong_namespace  *string `json:",omitempty"`
 	Should_wait_for_qsee  *bool `json:",omitempty"`
