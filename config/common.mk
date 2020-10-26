@@ -43,6 +43,11 @@ PRODUCT_COPY_FILES += \
     vendor/kangos/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
+# Flipendo
+PRODUCT_COPY_FILES += \
+    vendor/kangos/config/permissions/pixel_experience_2020.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2020.xml
+
+# KangOS-specific
 PRODUCT_COPY_FILES += \
     vendor/kangos/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/kangos/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
