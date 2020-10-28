@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     Launcher3QuickStep \
     messaging \
     Stk \
+    CustomDoze \
     Snap
 
 # KangOS packages
