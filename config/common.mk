@@ -19,6 +19,10 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kangos/overlay
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/kangos/overlay/common
 
+ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
+include vendor/kangos/build/core/qcom_target.mk
+endif
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
