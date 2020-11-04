@@ -19,6 +19,10 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kangos/overlay
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/kangos/overlay/common
 
+ifeq ($(USE_GAPPS), true)
+$(call inherit-product, vendor/gapps/gapps.mk)
+endif
+
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/kangos/build/core/qcom_target.mk
 endif
