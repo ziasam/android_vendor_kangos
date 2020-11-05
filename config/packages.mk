@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
 # KangOS packages
 PRODUCT_PACKAGES += \
     RetroMusicPlayer \
+    MatchmakerPrebuilt \
     OmniJaws \
     WeatherIcons \
     ViaBrowser \
