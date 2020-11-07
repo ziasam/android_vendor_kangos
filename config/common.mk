@@ -14,6 +14,7 @@
 
 include vendor/kangos/config/fingerprint.mk
 include vendor/kangos/config/version.mk
+$(call inherit-product, vendor/kangos/telephony/telephony.mk)
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kangos/overlay
 DEVICE_PACKAGE_OVERLAYS += \
