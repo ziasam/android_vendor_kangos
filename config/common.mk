@@ -65,8 +65,8 @@ PRODUCT_COPY_FILES += \
 
 # KangOS-specific
 PRODUCT_COPY_FILES += \
-    vendor/kangos/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/kangos/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/kangos/prebuilt/common/bin/backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.sh \
+    vendor/kangos/prebuilt/common/bin/backuptool.functions:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.functions \
     vendor/kangos/prebuilt/common/bin/50-cm.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-cm.sh
 
 # Copy all custom init rc files
@@ -75,7 +75,7 @@ $(foreach f,$(wildcard vendor/kangos/prebuilt/common/etc/init/*.rc),\
 
 # system mount
 PRODUCT_COPY_FILES += \
-    vendor/kangos/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
+    vendor/kangos/prebuilt/common/bin/system-mount.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/system-mount.sh
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
