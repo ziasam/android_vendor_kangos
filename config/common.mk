@@ -23,9 +23,9 @@ ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gapps/gapps.mk)
 endif
 
-include vendor/kangos/config/ProductConfigQcom.mk
-
-PRODUCT_SOONG_NAMESPACES += $(PATHMAP_SOONG_NAMESPACES)
+ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
+include vendor/kangos/build/core/qcom_target.mk
+endif
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

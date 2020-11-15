@@ -20,5 +20,8 @@ ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
 endif
 
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
+include vendor/kangos/config/BoardConfigQcom.mk
+endif
 
 include vendor/kangos/config/BoardConfigSoong.mk
