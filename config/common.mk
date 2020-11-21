@@ -131,3 +131,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Fonts
 include vendor/kangos/fonts.mk
 
+ifneq ($(filter blueline crosshatch,$(TARGET_DEVICE)),)
+ifneq ($(TARGET_BUILD_VARIANT),user)
+# Ignore neverallows to allow Smart Charging sepolicies
+SELINUX_IGNORE_NEVERALLOWS := true
+
+# Inherit from our vendor sepolicy config
+$(call inherit-product, vendor/kangos/configs/vendor_sepolicy.mk)
+
+# Include Smart Charging overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    vendor/kangos/overlay-smartcharging
+endif
+endif
