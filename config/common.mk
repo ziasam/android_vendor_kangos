@@ -54,9 +54,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Backup Tool
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/kangos/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/kangos/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/kangos/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/kangos/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/kangos/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/kangos/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Flipendo
@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/kangos/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/kangos/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/kangos/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh
+    vendor/kangos/prebuilt/common/bin/50-cm.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-cm.sh
 
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/kangos/prebuilt/common/etc/init/*.rc),\
