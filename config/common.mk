@@ -35,6 +35,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
+# Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+
+ifeq ($(TARGET_USES_BLUR), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.sf.disable_blurs=0
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.sf.disable_blurs=1
+endif
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.disable_rescue=true
+
 # Backup Tool
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
