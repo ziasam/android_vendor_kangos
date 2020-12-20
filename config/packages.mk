@@ -32,7 +32,8 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     WeatherIcons \
     ViaBrowser \
-    DU-Themes
+    DU-Themes \
+    SimpleDeviceConfig
 
 # Updates
 ifeq ($(KANGOS_BUILDTYPE),OFFICIAL)
