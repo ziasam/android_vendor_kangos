@@ -59,7 +59,7 @@ SOONG_CONFIG_kangosQcomVars += \
 
 # Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
 ifneq ($(filter $(UM_PLATFORMS),$(PRODUCT_BOARD_PLATFORM)),)
-SOONG_CONFIG_KangoseQcomVars += \
+SOONG_CONFIG_kangosQcomVars += \
     qcom_soong_namespace
 endif
 
