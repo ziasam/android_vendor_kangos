@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     MatchmakerPrebuilt \
     OmniJaws \
     WeatherIcons \
-    ViaBrowser \
     DU-Themes \
     SimpleDeviceConfig
 
