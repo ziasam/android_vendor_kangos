@@ -15,6 +15,17 @@
 
 # -----------------------------------------------------------------
 
+# Build system colors
+ifneq ($(BUILD_WITH_COLORS),0)
+ CL_RED="\033[31m"
+  CL_GRN="\033[32m"
+  CL_YLW="\033[33m"
+  CL_BLU="\033[34m"
+  CL_MAG="\033[35m"
+  CL_CYN="\033[36m"
+  CL_RST="\033[0m"
+endif
+
 # KangOS package
 KANGOS_TARGET_PACKAGE := $(PRODUCT_OUT)/KangOS-$(KANGOS_BUILD_ID).zip
 
@@ -28,4 +39,13 @@ bacon: otapackage
 	@echo "Zip: $(KANGOS_TARGET_PACKAGE)"
 	@echo "MD5: `cat $(KANGOS_TARGET_PACKAGE).md5sum | awk '{print $$1}' `"
 	@echo "Size: `du -sh $(KANGOS_TARGET_PACKAGE) | awk '{print $$1}' `"
-@echo "=============================================================================================================="
+	@echo "=============================================================================================================="
+	echo -e ${CL_RED}"							"${CL_RST}
+	echo -e ${CL_RED}"====  __  __                      ___  ____  	====="${CL_RST}
+	echo -e ${CL_RED}"====  | |/ / __ _ _ __   __ _    / _ \/ ___| 	====="${CL_RST}
+	echo -e ${CL_BLU}"====  | | / / _  |  _ \ / _  |  | | | \___ \ 	====="${CL_RST}
+	echo -e ${CL_CYN}"====  | |  \ (_| | | | | (_| |  | |_| |___) |	====="${CL_RST}
+	echo -e ${CL_RED}"====  |_|\__\__,_|_| |_|\__, |___\___/|____/ 	====="${CL_RST}
+	echo -e ${CL_RED}"====                   |___/_____|          	====="${CL_RST}
+	echo -e ${CL_BLU}" =================================================="${CL_RED}
+	@echo "Kanged Everything Ready to Rock"
