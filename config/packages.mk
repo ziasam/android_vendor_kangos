@@ -124,3 +124,7 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 -include packages/apps/Plugins/plugins.mk
+
+ifeq ($(TARGET_LAUNCHER),op)
+-include vendor/oplauncher/OPLauncher.mk)
+endif
